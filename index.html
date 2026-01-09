@@ -1,0 +1,720 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Catálogo de Maquillaje</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+<style>
+body{
+    margin:0;
+    font-family: Arial, sans-serif;
+    background:#f7f3f6;
+}
+header{
+    background:#7b1b4a;
+    color:white;
+    padding:20px;
+    text-align:center;
+}
+section{
+    background:white;
+    margin:20px;
+    padding:20px;
+    border-radius:10px;
+}
+h2,h3{
+    color:#7b1b4a;
+}
+.productos{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+    gap:15px;
+}
+.producto{
+    border:1px solid #ddd;
+    padding:15px;
+    border-radius:8px;
+}
+.precio{
+    color:#a8326e;
+    font-weight:bold;
+}
+footer{
+    background:#7b1b4a;
+    color:white;
+    text-align:center;
+    padding:10px;
+}
+</style>
+</head>
+
+<body>
+
+<style>
+body{
+    margin:0;
+    font-family: Arial, sans-serif;
+    background:#f7f3f6;
+}
+header{
+    background:#7b1b4a;
+    color:white;
+    padding:20px;
+    text-align:center;
+}
+nav{
+    background:#a8326e;
+    display:flex;
+    justify-content:center;
+    flex-wrap:wrap;
+}
+nav button{
+    background:none;
+    border:none;
+    color:white;
+    padding:12px 18px;
+    cursor:pointer;
+}
+nav button:hover{
+    background:#7b1b4a;
+}
+section{
+    background:white;
+    margin:20px;
+    padding:20px;
+    border-radius:10px;
+}
+h2{
+    color:#7b1b4a;
+}
+.productos{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+    gap:15px;
+}
+.producto{
+    border:1px solid #ddd;
+    border-radius:10px;
+    padding:15px;
+    text-align:center;
+}
+.precio{
+    color:#a8326e;
+    font-weight:bold;
+}
+button{
+    background:#a8326e;
+    color:white;
+    border:none;
+    padding:7px;
+    border-radius:5px;
+    cursor:pointer;
+}
+#carrito{
+    background:white;
+    padding:20px;
+    margin:20px;
+    border-radius:10px;
+    border:1px solid #ddd;
+}
+<section>
+  <h2>🛒 Carrito de compras</h2>
+
+  <div id="carrito">
+    <ul id="listaCarrito"></ul>
+    <p><strong>Total: $<span id="total">0</span></strong></p>
+  </div>
+</section>
+
+<footer>
+© 2025 Catálogo de Maquillaje
+</footer>
+footer{
+    background:#7b1b4a;
+    color:white;
+    text-align:center;
+    padding:10px;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+<img src="Portada.jpg" alt="Portada maquillaje" style="width:100%; border-radius:10px; margin-bottom:15px;">
+
+<!-- 💄🔍 BARRA DE BÚSQUEDA -->
+<section>
+  <h3>💄🔍 Buscar producto</h3>
+  <input 
+    type="text" 
+    id="buscador"
+    placeholder="Buscar maquillaje..."
+    onkeyup="buscarProducto()"
+    style="width:100%; padding:10px; font-size:16px;"
+  >
+</section>
+
+<h1>Catálogo de Maquillaje</h1>
+<p>Tienda digital de cosméticos</p>
+</header>
+
+<!-- 1. BIENVENIDA -->
+<section>
+<h2>1. Bienvenida</h2>
+
+<h3>Presentación de la colección</h3>
+<p>
+Esta colección de maquillaje ha sido creada para resaltar la belleza natural,
+ofreciendo productos innovadores, tonos modernos y fórmulas de alta calidad.
+</p>
+
+<h3>Mensaje de la marca</h3>
+<p>
+Creemos que el maquillaje es una forma de expresión personal.
+Nuestros productos están diseñados para brindar seguridad, comodidad y estilo.
+</p>
+
+<h3>Cómo usar este catálogo</h3>
+<p>
+Explora cada sección según tus necesidades. Cada categoría contiene productos
+organizados para facilitar tu elección.
+</p>
+</section>
+ 
+<!-- 2. ROSTRO -->
+<section>
+<h2>2. Rostro perfecto</h2>
+<div class="productos">
+
+<div class="producto" onclick="confirmarAgregar('Base líquida natural', 320)">
+  
+  <img src="Base.jpg" alt="Base líquida" style="width:100%; border-radius:8px;">
+
+  <p>Base líquida natural</p>
+  <span class="precio">$320</span>
+
+</div>
+
+<div class="producto" onclick="confirmarAgregar('Corrector de alta cobertura', 180)">
+  
+  <img src="Corrector de alta cobertura.jpg" alt="Corrector de alta cobertura" style="width:100%; border-radius:8px;">
+
+  <p>Corrector de alta cobertura</p>
+ <span class="precio">$180</span>
+
+</div>
+
+
+
+<div class="producto" onclick="confirmarAgregar('Polvo compacto', 210)">
+
+ <img src="Polvos compactos.jpg" alt="Polvos compactos" style="width:100%; border-radius:8px;">
+
+ <p>Polvos compactos</p>
+
+<span class="precio">$210</span>
+</div>
+
+<div class="producto" onclick="confirmarAgregar('Spray fijador', 190)">
+
+ <img src="Spray fijador.jpg" alt="Spray fijador" style="width:100%; border-radius:8px;">
+
+ <p>Spray fijador</p>
+
+<span class="precio">$190</span>
+</div>
+
+<div class="producto" onclick="confirmarAgregar('Rubores', 210)">
+
+ <img src="Rubores.jpg" alt="Rubores" style="width:100%; border-radius:8px;">
+
+ <p>Rubores</p>
+
+<span class="precio">$210</span>
+</div>
+
+<div class="producto" onclick="confirmarAgregar('Bronceadores cálidos', 250)">
+
+ <img src="Bronceadores cálidos.jpg" alt="Bronceadores cálidos" style="width:100%; border-radius:8px;">
+
+  <p>Bronceadores cálidos</p>
+
+<span class="precio">$250</span>
+</div>
+
+<div class="producto" onclick="confirmarAgregar('Iluminador dorado', 230)">
+
+ <img src="Iluminador dorado.jpg" alt="Iluminador dorado" style="width:100%; border-radius:8px;">
+
+ <p>Iluminador dorado</p>
+
+<span class="precio">$230</span>
+</div>
+
+<div class="producto" onclick="confirmarAgregar('Contornos en crema', 260)">
+
+ <img src="Contornos en crema.jpg" alt="Contornos en crema" style="width:100%; border-radius:8px;">
+
+ <p>Contornos en crema</p>
+
+<span class="precio">$260</span>
+</div>
+
+</div>
+</section>
+
+<!-- 3. OJOS -->
+<section>
+<h2>3. Mirada impactante</h2>
+<div class="productos">
+
+<div class="producto" onclick="confirmarAgregar('Paleta de sombras nude', 450)">
+
+ <img src="Paleta de sombras nude.jpg" alt="Paleta de sombras nude" style="width:100%; border-radius:8px;">
+
+ <p>Paleta de sombras nude</p>
+
+<span class="precio">$450</span>
+</div>
+
+<div class="producto" onclick="confirmarAgregar('Sombras individuales', 120)">
+
+ <img src="Sombras individuales.jpg" alt="Sombras individuales" style="width:100%; border-radius:8px;">
+
+ <p>Sombras individuales</p>
+
+<span class="precio">$120</span>
+</div>
+
+<div class="producto" onclick="confirmarAgregar('Delineador líquido', 180)">
+
+ <img src="Delineador líquido.jpg" alt="Delineador líquido" style="width:100%; border-radius:8px;">
+
+ <p>Delineador líquido</p>
+
+<span class="precio">$180</span>
+</div>
+
+<div class="producto" onclick="confirmarAgregar('Máscara de pestañas', 220)">
+
+ <img src="Máscara de pestañas.jpg" alt="Máscara de pestañas" style="width:100%; border-radius:8px;">
+
+ <p>Máscara de pestañas</p>
+
+<span class="precio">$220</span>
+</div>
+
+<div class="producto" onclick="confirmarAgregar('Lápiz para cejas', 160)">
+
+ <img src="Lápiz para cejas.jpg" alt="Lápiz para cejas" style="width:100%; border-radius:8px;">
+
+ <p>Lápiz para cejas</p>
+
+<span class="precio">$160</span>
+</div>
+
+<div class="producto" onclick="confirmarAgregar('Pestañas postizas', 140)">
+
+ <img src="Pestañas postizas.jpg" alt="Pestañas postizas" style="width:100%; border-radius:8px;">
+
+ <p>Pestañas postizas</p>
+
+<span class="precio">$140</span>
+</div>
+
+</div>
+</section>
+
+<!-- 4. LABIOS -->
+<section>
+<h2>4. Labios irresistibles</h2>
+<div class="productos">
+
+<div class="producto" onclick="confirmarAgregar('Labiales en barra matte', 240)">
+
+ <img src="Labiales en barra matte.jpg" alt="Labiales en barra matte" style="width:100%; border-radius:8px;">
+
+ <p>Labiales en barra matte</p>
+
+<span class="precio">$240</span>
+</div>
+
+<div class="producto" onclick="confirmarAgregar('Labiales líquidos', 260)">
+
+ <img src="Labiales líquidos.jpg" alt="Labiales líquidos" style="width:100%; border-radius:8px;">
+
+ <p>Labiales líquidos</p>
+
+<span class="precio">$260</span>
+</div>
+
+<div class="producto" onclick="confirmarAgregar('Brillo labial', 190)">
+
+ <img src="Brillo labial.jpg" alt="Brillo labial" style="width:100%; border-radius:8px;">
+
+ <p>Brillo labial</p>
+
+<span class="precio">$190</span>
+</div>
+
+<div class="producto" onclick="confirmarAgregar('Tintas labiales', 210)">
+ 
+ <img src="Tintas labiales.jpg" alt="Tintas labiales" style="width:100%; border-radius:8px;">
+
+ <p>Tintas labiales</p>
+
+<span class="precio">$210</span>
+</div>
+
+</div>
+</section>
+
+<!-- 5. HERRAMIENTAS -->
+<section>
+<h2>5. Herramientas y accesorios</h2>
+<div class="productos">
+
+<div class="producto" onclick="confirmarAgregar('Juego de brochas profesionales', 380)">
+
+ <img src="Juego de brochas profesionales.jpg" alt="Juego de brochas profesionales" style="width:100%; border-radius:8px;">
+
+ <p>Juego de brochas profesionales</p>
+
+<span class="precio">$380</span>
+</div>
+
+<div class="producto" onclick="confirmarAgregar('Esponja difuminadora', 120)">
+
+ <img src="Esponja difuminadora.jpg" alt="Esponja difuminadora" style="width:100%; border-radius:8px;">
+
+ <p>Esponja difuminadora</p>
+
+<span class="precio">$120</span>
+</div>
+
+<div class="producto" onclick="confirmarAgregar('Rizador de pestañas', 150)">
+
+ <img src="Rizador de pestañas.jpg" alt="Rizador de pestañas" style="width:100%; border-radius:8px;">
+
+ <p>Rizador de pestañas</p>
+
+<span class="precio">$150</span>
+</div>
+
+<div class="producto" onclick="confirmarAgregar('Estuche organizador', 290)">
+
+ <img src="Estuche organizador.jpg" alt="Estuche organizador" style="width:100%; border-radius:8px;">
+
+ <p>Estuche organizador</p>
+
+<span class="precio">$290</span>
+</div>
+
+</div>
+</section>
+
+<!-- 6. SKINCARE -->
+<section>
+<h2>6. Preparación y cuidado de la piel</h2>
+<div class="productos">
+
+<div class="producto" onclick="confirmarAgregar('Prebase facial', 280)">
+
+ <img src="Prebase facial.jpg" alt="Prebase facial" style="width:100%; border-radius:8px;">
+
+ <p>Prebase facial</p>
+
+<span class="precio">$280</span>
+</div>
+
+<div class="producto" onclick="confirmarAgregar('Crema hidratante', 300)">
+
+ <img src="Crema hidratante.jpg" alt="Crema hidratante" style="width:100%; border-radius:8px;">
+
+ <p>Crema hidratante</p>
+
+<span class="precio">$300</span>
+</div>
+
+<div class="producto" onclick="confirmarAgregar('Sérum facial', 380)">
+  
+ <img src="Sérum facial.jpg" alt="Sérum facial" style="width:100%; border-radius:8px;">
+
+ <p>Sérum facial</p>
+
+<span class="precio">$380</span>
+</div>
+
+<div class="producto" onclick="confirmarAgregar('Desmaquillante suave', 220)">
+
+ <img src="Desmaquillante suave.jpg" alt="Desmaquillante suave" style="width:100%; border-radius:8px;">
+
+ <p>Desmaquillante suave</p>
+
+<span class="precio">$220</span>
+</div>
+
+</div>
+</section>
+
+<!-- 7. COLECCIONES ESPECIALES -->
+<section>
+<h2>7. Colecciones especiales</h2>
+<div class="productos">
+
+<div class="producto" onclick="confirmarAgregar('Edición limitada primavera', 680)">
+
+ <img src="Edición limitada primavera.jpg" alt="Edición limitada primavera" style="width:100%; border-radius:8px;">
+
+ <p>Edición limitada primavera</p>
+
+<span class="precio">$680</span>
+</div>
+
+<div class="producto" onclick="confirmarAgregar('Edición limitada noche glam', 720)">
+
+ <img src="Edición limitada noche glam.jpg" alt="Edición limitada noche glam" style="width:100%; border-radius:8px;">
+
+ <p>Edición limitada noche glam</p>
+
+<span class="precio">$720</span>
+</div>
+
+<div class="producto" onclick="confirmarAgregar('Colaboración influencer beauty', 850)">
+
+ <img src="Colaboración influencer beauty.jpg" alt="Colaboración influencer beauty" style="width:100%; border-radius:8px;">
+
+ <p>Colaboración influencer beauty</p>
+
+<span class="precio">$850</span>
+</div>
+
+<div class="producto" onclick="confirmarAgregar('Lanzamiento exclusivo temporada', 790)">
+
+ <img src="Lanzamiento exclusivo temporada.jpg" alt="Lanzamiento exclusivo temporada" style="width:100%; border-radius:8px;">
+
+ <p>Lanzamiento exclusivo temporada</p>
+
+<span class="precio">$790</span>
+</div>
+
+<div class="producto" onclick="confirmarAgregar('Set regalo maquillaje básico', 950)">
+
+ <img src="Set regalo maquillaje básico.jpg" alt="Set regalo maquillaje básico" style="width:100%; border-radius:8px;">
+
+ <p>Set regalo maquillaje básico</p>
+
+<span class="precio">$950</span>
+</div>
+
+<div class="producto" onclick="confirmarAgregar('Paquete temático profesional', 1200)">
+
+ <img src="Paquete temático profesional.jpg" alt="Paquete temático profesional" style="width:100%; border-radius:8px;">
+
+ <p>Paquete temático profesional</p>
+
+<span class="precio">$1,200</span>
+</div>
+
+</div>
+</section>
+
+<!-- 8. GUÍA DE TONOS E INGREDIENTES -->
+<section>
+<h2>8. Guía de tonos e ingredientes</h2>
+<div class="productos">
+
+<div class="producto" onclick="confirmarAgregar('Tonos claros (piel clara)', 150)">
+
+ <img src="Tonos claros (piel clara).jpg" alt="Tonos claros (piel clara)" style="width:100%; border-radius:8px;">
+
+ <p>Tonos claros (piel clara)</p>
+
+<span class="precio">$150</span>
+</div>
+
+<div class="producto" onclick="confirmarAgregar('Tonos medios (piel media)', 150)">
+
+ <img src="Tonos medios (piel media).jpg" alt="Tonos medios (piel media)" style="width:100%; border-radius:8px;">
+
+ <p>Tonos medios (piel media)</p>
+
+<span class="precio">$150</span>
+</div>
+
+<div class="producto" onclick="confirmarAgregar('Tonos oscuros (piel oscura)', 150)">
+
+ <img src="Tonos oscuros (piel oscura).jpg" alt="Tonos oscuros (piel oscura)" style="width:100%; border-radius:8px;">
+
+ <p>Tonos oscuros (piel oscura)</p>
+
+<span class="precio">$150</span>
+</div>
+
+<div class="producto" onclick="confirmarAgregar('Ingredientes con vitamina E', 120)">
+
+ <img src="Ingredientes con vitamina E.jpg" alt="Ingredientes con vitamina E" style="width:100%; border-radius:8px;">
+
+ <p>Ingredientes con vitamina E</p>
+
+<span class="precio">$120</span>
+</div>
+
+<div class="producto" onclick="confirmarAgregar('Extractos naturales', 130)">
+
+ <img src="Extractos naturales.jpg" alt="Extractos naturales" style="width:100%; border-radius:8px;">
+
+ <p>Extractos naturales</p>
+
+<span class="precio">$130</span>
+</div>
+
+<div class="producto" onclick="confirmarAgregar('Fórmulas hipoalergénicas', 140)">
+
+ <img src="Fórmulas hipoalergénicas.jpg" alt="Fórmulas hipoalergénicas" style="width:100%; border-radius:8px;">
+
+ <p>Fórmulas hipoalergénicas</p>
+
+<span class="precio">$140</span>
+</div>
+
+<div class="producto" onclick="confirmarAgregar('Recomendación piel grasa', 100)">
+
+ <img src="Recomendación piel grasa.jpg" alt="Recomendación piel grasa" style="width:100%; border-radius:8px;">
+
+ <p>Recomendación piel grasa</p>
+
+<span class="precio">$100</span>
+</div>
+
+<div class="producto" onclick="confirmarAgregar('Recomendación piel seca', 100)">
+
+ <img src="Recomendación piel seca.jpg" alt="Recomendación piel seca" style="width:100%; border-radius:8px;">
+
+ <p>Recomendación piel seca</p>
+
+<span class="precio">$100</span>
+</div>
+
+<div class="producto" onclick="confirmarAgregar('Uso diario o evento especial', 180)">
+
+ <img src="Uso diario o evento especial.jpg" alt="Uso diario o evento especial" style="width:100%; border-radius:8px;">
+
+ <p>Uso diario o evento especial</p>
+
+  Uso diario o evento especial – <span class="precio">$180</span>
+</div>
+
+</div>
+</section>
+
+<!-- 9. SOBRE LA MARCA -->
+<section class="container">
+  
+  <h2>9. Sobre la marca</h2>
+  <p>
+    Nuestra marca de maquillaje nace con el objetivo de resaltar la belleza natural de cada persona,
+    ofreciendo productos de alta calidad, accesibles y alineados con las tendencias actuales.
+    Creemos que el maquillaje es una forma de expresión personal y confianza.
+  </p>
+
+  <!-- HISTORIA Y VALORES -->
+  <h3>Historia y valores</h3>
+  <p>
+    La marca fue creada a partir de la pasión por el mundo de la cosmética y el cuidado personal.
+    Desde sus inicios, se ha enfocado en desarrollar productos innovadores, seguros y confiables,
+    pensados para diferentes tipos de piel y estilos.
+  </p>
+  <p>
+    Nuestros valores principales son la calidad, la inclusión, el respeto por la diversidad
+    y el compromiso con el bienestar de nuestros clientes. Apostamos por fórmulas responsables
+    y procesos que buscan reducir el impacto ambiental.
+  </p>
+
+  <!-- REDES SOCIALES Y CONTACTO -->
+  <h3>Redes sociales y contacto</h3>
+  <p>
+    Mantenemos una comunicación constante con nuestros clientes a través de redes sociales,
+    donde compartimos lanzamientos, consejos de maquillaje y novedades del catálogo.
+  </p>
+  <p>
+    También ofrecemos atención personalizada para resolver dudas, recibir sugerencias
+    y brindar información sobre productos, pedidos y disponibilidad.
+  </p>
+
+ <ul> 
+
+ <li>Instagram: @catalogomaquillaje</li> 
+ <li>Facebook: Catálogo de Maquillaje Oficial</li> 
+ <li>Correo electrónico: contacto@catalogomaquillaje.com</li> 
+
+</ul>
+
+  <!-- POLÍTICAS DE COMPRA -->
+  <h3>Políticas de compra, envío o devolución</h3>
+  <p>
+    Las compras realizadas a través del catálogo están sujetas a disponibilidad de productos.
+    Los precios pueden variar sin previo aviso y se muestran en moneda nacional.
+  </p>
+  <p>
+    Los envíos se realizan en un plazo estimado de 3 a 7 días hábiles, dependiendo de la ubicación.
+    En caso de productos defectuosos, se aceptan devoluciones bajo las condiciones establecidas,
+    siempre y cuando se conserven los empaques originales.
+  </p>
+
+<!-- 🛒 CARRITO -->
+<div id="carrito">
+  <h3>🛒 Carrito</h3>
+  <ul id="listaCarrito"></ul>
+  <p><strong>Total: $<span id="total">0</span></strong></p>
+</div>
+
+<script>
+let carrito = [];
+let total = 0;
+
+function confirmarAgregar(nombre, precio){
+    carrito.push({ nombre, precio });
+    total += precio;
+    actualizarCarrito();
+}
+
+function actualizarCarrito(){
+    const lista = document.getElementById("listaCarrito");
+    const totalHTML = document.getElementById("total");
+
+    lista.innerHTML = "";
+    carrito.forEach((item, index) => {
+        lista.innerHTML += `
+        <li>
+            ${item.nombre} - $${item.precio}
+            <button onclick="eliminarProducto(${index})">❌</button>
+        </li>`;
+    });
+
+    totalHTML.textContent = total;
+}
+
+function eliminarProducto(index){
+    total -= carrito[index].precio;
+    carrito.splice(index, 1);
+    actualizarCarrito();
+}
+
+/* 🔍 FUNCIÓN DE BÚSQUEDA */
+function buscarProducto(){
+    const texto = document.getElementById("buscador").value.toLowerCase();
+    const productos = document.querySelectorAll(".producto");
+
+    productos.forEach(producto => {
+        const nombre = producto.textContent.toLowerCase();
+        producto.style.display = nombre.includes(texto) ? "block" : "none";
+    });
+}
+</script>
+
+</body>
+
